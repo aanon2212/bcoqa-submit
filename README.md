@@ -7,13 +7,12 @@ The BCoQA dataset comprises over 14,000 conversations, featuring more than 140,0
 - [Dataset](#dataset)
 - [Evaluation](#evaluation)
 - [Finetuning](#finetune)
-- [Benchmark](#benchmark)
 - [Acknowledgement](#acknowledgement)
 
 ## Dataset
 
 ### Through JSON files
-Alternatively, you can download the dataset directly from the following links to the JSON files:
+You can download the dataset directly from the following links to the JSON files:
 - [Train Set](https://github.com/aanon2212/bcoqa-submit/raw/main/data/train.json?download=)
 - [Valid Set](https://github.com/aanon2212/bcoqa-submit/raw/main/data/validation.json?download=)
 - [Test Set](https://github.com/aanon2212/bcoqa-submit/raw/main/data/test.json?download=)
@@ -27,15 +26,6 @@ To evaluate your model, go through the following steps:
   ```
 ## Finetune
 There are various ways to build a good CCQA system. One simple approach is to fine-tune a model by adding the conversation history to the context. The [bt5-bcoqa-finetune.ipynb](https://github.com/aanon2212/bcoqa-submit/blob/main/bt5-bcoqa-finetune.ipynb) notebook demonstrates one of many ways to do this.
-
-## Benchmark
-We fine-tuned three sequence-to-sequence models on the training set and assessed their performance using the test set and our evaluation script. Additionally, we conducted human evaluations to provide a reference point. The results are presented below.
-| Model Name | Parameter Count | Exact Match | F1 Score |
-| --- | --- | --- | --- |
-| HumanEval | --- | 68.1 | 79.2 |
-| [banglat5](https://huggingface.co/csebuetnlp/banglat5) | 223M | 33.2 | 46.4 |
-| [mt5-base](https://huggingface.co/google/mt5-base) | 580M | 29.5 | 42.1 |
-| [mbart-large-50](https://huggingface.co/facebook/mbart-large-50) | 610M | 26.8 | 36.2 |
 
 ## Acknowledgement
 We would like to extend our gratitude to the [CoQA](https://stanfordnlp.github.io/coqa/) and [QuAC](https://quac.ai/) teams for providing the original English datasets, which served as the foundation for our work. Additionally, we appreciate the CoQA team for sharing their base script, which we modified to create our own evaluation script. Their contributions have been invaluable to our project.
